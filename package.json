@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hstarorg/j-browser-tab.git"
+    "url": "git+https://github.com/hstarorg/jBrowserTab.git"
   },
   "keywords": [
     "browser-tab",
@@ -19,9 +19,9 @@
   "author": "Jay.M.Hu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hstarorg/j-browser-tab/issues"
+    "url": "https://github.com/hstarorg/jBrowserTab/issues"
   },
-  "homepage": "https://github.com/hstarorg/j-browser-tab#readme",
+  "homepage": "https://github.com/hstarorg/jBrowserTab#readme",
   "devDependencies": {
     "gulp-concat": "^2.6.1",
     "gulp-uglify": "^2.0.0",
