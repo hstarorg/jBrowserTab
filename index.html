@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>jBrowserTab Example</title>
+	<base href="/jBrowserTab/">
+</head>
+
+<body>
+	<h1>jBrowserTab 演示页面</h1>
+	<hr>
+	<ul id="logs"></ul>
+	<script src="j-browser-tab.js"></script>
+	<script>
+		var intervalId = 0;
+		var testFn = function (stop) {
+			if (stop) {
+				return window.clearInterval(intervalId);
+			}
+			var i = 0;
+			intervalId = window.setInterval(function () {
+				i++;
+				document.title = i % 2 ? '主人，请不要抛弃我~~你快回来（唱~）' : 'o(>﹏<)o不要啊';
+			}, 500);
+		};
+		var logEl = document.getElementById('logs');
+		window.jBrowserTab.on('visibilitychange', function (isActive) {
+			var li = document.createElement('li');
+			li.innerText = new Date().toLocaleString() + (isActive ? '可见' : '隐藏');
+			logEl.appendChild(li);
+			if (isActive) {
+				document.title = '欢迎回来~';
+				testFn(true);
+			} else {
+				testFn();
+			}
+		});
+	</script>
+</body>
+
+</html>
