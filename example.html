@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jBrowserTab Example</title>
+</head>
+
+<body>
+  <ul id="logs"></ul>
+  <script src="dist/j-browser-tab.js"></script>
+  <script>
+    var logEl = document.getElementById('logs');
+    window.jBrowserTab.on('visibilitychange', function (isActive) {
+      var li = document.createElement('li');
+      li.innerText = new Date().toLocaleString() + (isActive ? '可见' : '隐藏');
+      logEl.appendChild(li);
+    });
+  </script>
+</body>
+
+</html>
